@@ -1,139 +1,273 @@
-LOFFER是个可以帮助你get off from LOFTER的软件（我知道这个pun很烂）。
+# [Alembic](https://alembic.darn.es/)
+[![Gem Version](https://badge.fury.io/rb/alembic-jekyll-theme.svg)](https://badge.fury.io/rb/alembic-jekyll-theme)
+
+⚗ A Jekyll boilerplate theme designed to be a starting point for any Jekyll website.
+
+![Screenshot](https://raw.githubusercontent.com/daviddarnes/alembic/master/screenshot.png)
+
+[<img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" width="217"/>](https://buymeacoffee.com/daviddarnes#support)
 
-这是一个可以通过Fork直接发布在GitHub的Jekyll博客，你不需要编写代码或使用命令行即可获得一个部署在GitHub的博客。
+## Contents
+- [About](#about)
+- [Features](#features)
+- [Examples](#examples)
+- [Installation](#installation)
+- [Customising](#customising)
+- [Configuration](#configuration)
+  - [Gem dependency settings](#gem-dependency-settings)
+  - [Site settings](#site-settings)
+  - [Site performance settings](#site-performance-settings)
+  - [Site navigation](#site-navigation)
+- [Using includes](#using-includes)
+- [Page layouts](#page-layouts)
+- [Page and Post options](#page-and-post-options)
+- [Credits](#credits)
 
-当你看到不认识的术语，请忽略它，我知道程序员不说人话，我都不是程序员但是我已经开始意识到这是因为我们不知道这些概念用人话怎么说。
+## About
 
-以下我会尽量用人话解说如何使用这个……LOFFER。
+**Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate theme is designed to get rolling immediately. Install it, configure it, tweak it, push it.**
 
-## 注意
+## Features
 
-LOFFER是一个**博客模板**，使用GitHub Pages发布个人博客是没有任何问题的。 **但是:**
+- Available as a **theme gem** and **GitHub Pages** theme
+- Clear and elegant design that can be used out of the box or as solid starting point
+- Tested in all major browsers, including **IE and Edge**
+- Built in **Service Worker** so it can work offline and on slow connections
+- **Configurable colours** and typography in a single settings file
+- Extensive set of **shortcodes** to include various elements; such as buttons, icons, figure images and more
+- Solid **typographic framework** from [Sassline](https://sassline.com/)
+- Configurable navigation via a single file
+- Modular Jekyll components
+- Post category support in the form of a single post index page grouped by category
+- Built in live search using JavaScript
+- **Contact form** built in using [Formspree](https://formspree.io/) or [Netlify Forms](https://www.netlify.com/features/#forms)
+- Designed with **[Siteleaf](http://www.siteleaf.com/)** in mind
+- Has 9 of the most popular networks as performant sharing buttons
+- Has documentation
 
-- **请勿发布成人向内容** 
-- **不要将大量图片上传到GitHub**
+## Examples
 
-如有疑问，请阅读[GitHub Pages官方说明](https://pages.github.com/)。
+Here are a few examples of Alembic out in the wild being used in a variety of ways:
 
-另外，同人作品更好的发布平台是[AO3](https://archiveofourown.org/)，你想你发在AO3还有tag还有kudos还有人看，是吧？
+- [billmei.net](https://billmei.net/)
+- [bawejakunal.github.io](https://bawejakunal.github.io/)
+- [case2111.github.io](https://case2111.github.io/)
+- [karateca.org](https://www.karateca.org/)
 
+## Installation
 
-## 如何使用
+### Quick setup
 
-首先，这个博客主题适应手机阅读，但是，要使用它建立你自己的博客，你需要上电脑操作。
+To give you a running start I've put together some starter kits that you can download, fork or even deploy immediately:
 
-### 第一步 Fork到你的GitHub
+- Vanilla Jekyll starter kit:  
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/daviddarnes/alembic-kit)
+- Forestry starter kit:  
+  [![Deploy to Forestry](https://assets.forestry.io/import-to-forestry.svg)](https://app.forestry.io/quick-start?repo=daviddarnes/alembic-forestry-kit&engine=jekyll)  
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/daviddarnes/alembic-forestry-kit)
+- Netlify CMS starter kit:  
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/daviddarnes/alembic-netlifycms-kit&stack=cms)
 
-请点击[GitHub](https://github.com/)，注册一个GitHub账户。我们可以理解Git就是个文件版本管理系统，本身并不需要会代码即可使用。
+- GitHub Pages with remote theme kit - **[Download kit](https://github.com/daviddarnes/alembic-kit/archive/remote-theme.zip)**
+- Stackbit starter kit:  
+  [![Create with Stackbit](https://assets.stackbit.com/badge/create-with-stackbit.svg)](https://app.stackbit.com/create?theme=https://github.com/daviddarnes/alembic-stackbit-kit)
 
-现在你看到的LOFFER，是作为一个GitHub上的Repository（代码库）存在的，你可以把这个代码库复制到你自己的GitHub账户中，这个操作叫做Fork。
+### As a Jekyll theme
 
-点击[LOFFER](https://github.com/FromEndWorld/LOFFER)，进入LOFFER的GitHub Repository页面，然后点Fork：
+1. Add `gem "alembic-jekyll-theme"` to your `Gemfile` to add the theme as a dependancy
+2. Run the command `bundle install` in the root of project to install the theme and its dependancies
+3. Add `theme: alembic-jekyll-theme` to your `_config.yml` file to set the site theme
+4. Run `bundle exec jekyll serve` to build and serve your site
+5. Done! Use the [configuration](#configuration) documentation and the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file to set things like the navigation, contact form and social sharing buttons
 
-![gif](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/fork.gif)
+### As a GitHub Pages remote theme
 
-然后你立刻就可以看到LOFFER再次出现，这次它已经属于你了，这里我建议你重命名它，点击settings，给你的博客起个名字（请尽量使用字母而非中文）。
+1. Add `gem "jekyll-remote-theme"` to your `Gemfile` to add the theme as a dependancy
+2. Run the command `bundle install` in the root of project to install the jekyll remote theme gem as a dependancy
+3. Add `jekyll-remote-theme` to the list of `plugins` in your `_config.yml` file
+4. Add `remote_theme: daviddarnes/alembic` to your `_config.yml` file to set the site theme
+5. Run `bundle exec jekyll serve` to build and serve your site
+6. Done! Use the [configuration](#configuration) documentation and the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file to set things like the navigation, contact form and social sharing buttons
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/rename.png)
+### As a Boilerplate / Fork
 
-然后，向下拉页面，你会看到“GitHub Pages”，这是GitHub内置的网站host服务，选择master，如图所示：
+_(deprecated, not recommended)_
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/pages.png)
+1. [Fork the repo](https://github.com/daviddarnes/alembic#fork-destination-box)
+2. Replace the `Gemfile` with one stating all the gems used in your project
+3. Delete the following unnecessary files/folders: `.github`, `LICENSE`, `screenshot.png`, `CNAME` and `alembic-jekyll-theme.gemspec`
+4. Run the command `bundle install` in the root of project to install the jekyll remote theme gem as a dependancy
+5. Run `bundle exec jekyll serve` to build and serve your site
+6. Done! Use the [configuration](#configuration) documentation and the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file to set things like the navigation, contact form and social sharing buttons
 
-在几秒钟后，刷新此页面，你通常会看到这个绿色的东西（如果没看到，多等一会），你的网站已经发布成功，点击这个链接，即可查看：
+## Customising
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/published.png)
+When using Alembic as a theme means you can take advantage of the file overriding method. This allows you to overwrite any file in this theme with your own custom file, by matching the file name and path. The most common example of this would be if you want to add your own styles or change the core style settings.
 
-你可能会看到网站长得很丑，请继续下一步.
+To add your own styles copy the [`styles.scss`](https://github.com/daviddarnes/alembic/blob/master/assets/styles.scss) into your own project with the same file path (`assets/styles.scss`). From there you can add your own styles, you can even optionally ignore the theme styles by removing the `@import "alembic";` line.
 
-### 第二步 设置站点信息
+If you're looking to set your own colours and fonts you can overwrite them by matching the variable names from the [`_settings.scss`](https://github.com/daviddarnes/alembic/blob/master/_sass/_settings.scss) file in your own `styles.scss`, make sure to state them before the `@import "alembic";` line so they take effect. The settings are a mixture of custom variables and settings from [Sassline](https://medium.com/@jakegiltsoff/sassline-v2-0-e424b2881e7e) - follow the link to find out how to configure the typographic settings.
 
-在你的博客的GitHub代码库页面里，选择Code，文件列表里选择_config.yml，点击打开，点击右上角笔形图标修改文档。
+## Configuration
 
-修改完成后，点击“Commit changes”。每次修改过代码库并且commit后，GitHub Pages都会自动重新发布网站，只要等上几分钟，再次刷新你的博客页面，就会看到你的修改了。
+There are a number of optional settings for you to configure. Use the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file in the repo and use the documentation below to configure your site:
 
-还有一点，**LOFFER使用的是MIT协议，大意就是全部开源随意使用，如果你要保留自己博文的权利，请编辑LICENSE文件，写上类似“_posts中的文档作者保留权利”这样的内容。**
+### Gem dependency settings
 
-### 第三步 发布博文
+`twitter`, `author` and `social` values will need to be changed to the projects' social information or removed. Look for the `Gem settings` comment within the `/_config.yml` file. These values are for the [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) - follow the link to find out more.
 
-在你的博客的GitHub代码库页面里，点开_posts文件夹，这里面就是你的博客文章。
+### Site settings
 
-这些文章使用的格式是Markdown，文件后缀名是md，这是一种非常简单易用的有格式文本标记语言，你应该已经注意到，在LOFFER自带的示例性博文中有一篇中文的Markdown语法介绍。
+You'll need to change the `description`, `title` and `url` to match with the project. You'll also need to replace the logos, default social and default offline images in the `/assets/` directory with your own graphics. Setting the site language can be done with `lang`, the theme will default to `en-US`. The `email` needs to be changed to the email you want to receive contact form enquires with. The `disqus` value can be changed to your project username on [Disqus](https://disqus.com), remove this from the `/_config.yml` file if you don't want comments enabled. Look for the `Site settings` comment within the `/_config.yml` file. The `repo` setting is optional, for now, and can be removed entirely, if you wish.
 
-更简单的办法是使用[Typora](https://typora.io/)，这是一个全图形化界面，全实时预览的Markdown写作软件，非常轻量，而且免费。
+Google Analytics can be enabled via the site configuration too. Add your tracking ID to the `/_config.yml` file in the following method: `google_analytics: 'UA-XXXXXXXX-1'`. By default all IPs of site visitors are anonymous to maintain a level of privacy for the audience. If you wish to turn this off set the `google_analytics_anonymize_ip` key to `false`.
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Typora.png)
+Date format can be customised in the `/_config.yml` with the option `date_format` (please refer to Liquid date filters documentation for learning about formatting possibilities):
+`date_format: "%-d %B %Y" # NOTE: only placeholder formatting is supported (do not try to use ordinal dates introduced in Jekyll 3.8)`
 
-在发布博文前，你需要在文章的头部添加这样的内容，包括你的文章标题，发布日期，作者名，和tag等。
+### Site performance settings
 
-    ---
-    layout: post
-    title: LOFFER文档
-    date: 2019-06-02
-    Author: 来自中世界
-    categories: 
-    tags: [sample, document]
-    comments: true
-    --- 
+Alembic comes with a couple of options to enhance the speed and overall performance of the site you build upon it.
 
-完成后，保存为.md文件，文件名是date-标题，例如 2019-06-02-document.md (注意这里的标题会成为这个post的URL，所以推荐使用字母而非中文，它不影响页面上显示的标题)，然后上传到_posts文件夹，commit，很快就可以在博客上看到新文章了。
+By default the built in Service Worker is enabled, and will work on a 'network first' method. Meaning if there's no internet connection the content the Service Worker has cached will be used until the connection comes back. It will always look for a live version of the code first. To disable the Service Worker add an option called `service_worker` with a value of `false` in the `/_config.yml` file.
 
-### 可选：图片怎么办？
+Another option to speed up Alembic is to enable inline CSS, which is off by default. You can enable this by setting `css_inline: true` inside your `/_config.yml` file. By switching to inline styles you bypass the use `/assets/styles.scss`, any custom styles will need to be added in `/_includes/site-styles.html` or in a new custom file.
 
-少量图片可以上传到images文件夹，然后在博文中添加。
+Please note that these options aren't a "silver bullet" for making your site faster, make sure to audit and debug your site to get the best performance for your situation.
 
-但是GitHub用来当做图床有滥用之嫌，如果你的博客以图片为主，建议选择外链图床，例如[sm.ms](https://sm.ms/)就是和很好的选择。
+### Site navigation
 
-如果想要寻找更适合自己的图床，敬请Google一下。
+There are a total of 4 different navigation types:
 
-在博文中添加图片的Markdown语法是：`![图片名](URL)`
+- `navigation_header`: The links shown in the header (it is also used on the 404 page)
+- `navigation_footer`: The links shown in the footer
+- `social_links`: The social icon links that are shown in the sidebar
+- `sharing_links`: The social sharing buttons that are shown at the bottom of blog posts
 
-### 可选：添加评论区
+All navigations can be edited using the `_config.yml` file. To see example usage either look for the `Site navigation` comment within the `/_config.yml` file or see [the nav-share.html include](#nav-sharehtml).
 
-LOFFER支持Disqus评论，虽然Disqus很丑，但是它是免费的，设置起来又方便，因此大家也就不要嫌弃它。
+If there are no items for the `navigation_header` or `navigation_footer`, they will fallback to a list of pages within the site. The `social_navigation` properties should either be one that is already in the list (so `Twitter` or `Facebook`) or a regular `link`, this is so an icon can be set for the link.
 
-首先，注册一个[Disqus](https://disqus.com/)账户，我们可以选择这个免费方案：
+## Using includes
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-plan.png)
+There are 2 main types of includes: ones designed for the site and ones that are designed as shortcodes. Here are a list of the shortcode includes:
 
-注册成功后，新建一个站点（site），以LOFFER为例设置步骤如下：
+### `button.html`
+A button that can link to a page of any kind.
 
-首先站点名LOFFER，生成了shortname是loffer，类型可以随便选。
+Example usage: `{% include button.html text="I'm a button" link="https://david.darn.es" %}`
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-1.png)
+Available options:
+- `text`: The text of the button _required_
+- `link`: The link that the button goes to _required_
+- `icon`: The icon that is added to the end of the button text
+- `color`: The colour of the button
 
-安装时选择Jekyll。
+### `figure.html`
+An image with optional caption.
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-2.png)
+Example usage: `{% include figure.html image="/uploads/feature-image.jpg" caption="Check out my photo" %}`
 
-最后填入你的博客地址，语言可以选中文，点Complete，即可！
+Available options:
+- `image`: The image shown _required_
+- `caption`: A caption to explain the image
+- `position`: The position of the image; `left`, `right` or `center`
+- `width` & `height`: Optional width and height attributes of the containing image
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-3.png)
+### `icon.html`
+An icon.
 
-然后需要回到你的博客，修改_config.yml文件，在disqus字段填上你的shortname，commit，完成！
+Example usage: `{% include icon.html id="twitter" %}`
 
-### 导入LOFTER的内容
+Available options:
+- `id`: The reference for the icon _required_
+- `title`: The accessible label for the icon
+- `color`: The desired colour of the icon
+- `width` & `height`: Width and height attributes for the icon, default is `16`
 
-这部分由于LOFTER的导出文件十分~~优秀~~，需要另外解决。
+### `nav-share.html`
+A set of buttons that share the current page to various social networks, which is controlled within the `_config.yml` file under the `sharing_links` keyword.
 
-诸位可以使用[墨问非名太太的脚本](http://underdream.lofter.com/post/38ea7d_1c5d8a983)，其中选择Jekyll输出即可。
+Example usage: `{% include nav-share.html %}`
 
-我个人也在折腾一个脚本，目前还没有完全debug清楚，不管如何，请先在lofter里导出一下，存在本地也是好的，贴吧可以让2017以前所有内容全部消失，中国互联网，没什么不可能发生的。
+Available options:
+``` yml
+Twitter: "#1DA1F2"
+facebook: "#3B5998"
+Pinterest: "#BD081C"
+LinkedIn: "#0077B5"
+tumblr: "#36465D"
+Reddit: "#FF4500"
+HackerNews: "#ff6600"
+DesignerNews: "#2D72D9"
+Email: true
+```
 
-## 致谢
+_The first item is the name of the network (must be one of the ones stated above) and the second is the colour of the button. To remove a button remove the line of the same name._
 
-* [Jekyll](https://github.com/jekyll/jekyll) - 这是本站存在的根基
-* [Kiko-now](<https://github.com/aweekj/kiko-now>) - 我首先是fork这个主题，然后再其上进行修改汉化，才有了LOFFER
-* [Font Awesome](<https://fontawesome.com/>) - 社交网络图标来自FontAwesome的免费开源内容
+### `video.html`
+A YouTube video.
 
+Example usage: `{% include video.html id="zrkcGL5H3MU" %}`
 
+Available options:
+- `id`: The YouTube ID for the video _required_
 
-## 帮助这个项目
+### `map.html`
+A Google map. _See Google [My Maps](https://www.google.com/mymaps)_
 
-介绍更多人来使用它，摆脱lofter自由飞翔！
+Example usage: `{% include map.html id="1UT-2Z-Vg_MG_TrS5X2p8SthsJhc" %}`
 
-当然如果单说写同人的话，我还是建议大家都去AO3，但是自家博客自己架也很酷炫，你还可以选择很多其他的forkable Jeykll主题，GitHub上有很多，或者试试其他博客架设工具，例如Hexo，与代码斗其乐无穷。
+Available options:
+- `id`: The map ID for the video _required_
 
-最后，回到[LOFFER](https://github.com/FromEndWorld/LOFFER)，给我点一个☆吧！
+### `site-form.html`
+Adds a contact form to the page. This can be used with [Formspree](https://formspree.io/) or [Netlify Forms](https://www.netlify.com/docs/form-handling/) depending on your setup.
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/givemefive.png)
+Example usage: `{% include site-form.html %}`
+
+Available options:
+- `netlify_form=true`: Set whether you would like to use Netlify Forms, otherwise the form will default to Formspree
+- `name`: Give the form a name, by default the form is called "Contact". The name will be reflected when form submissions come through in Netlify or in your email client. The name is also used in the label and input elements for accessibility
+
+
+Use the `email` option in the `/_config.yml` to change to the desired email.
+
+### `site-search.html`
+Adds a search form to the page.
+
+Example usage: `{% include site-search.html %}`
+
+This include has no options. This include will add a block of javascript to the page and javascript reference in order for the search field to work correctly.
+
+### `site-before-start.html` & `site-before-end.html`
+Optional html includes for adding scripts, css, js or any embed code you wish to add to every page without the need to overwrite the entire `default.html` template.
+
+**Example usage:** These are different to other includes as they are designed to be overwritten. If you create a `site-before-start.html` file in the `_includes/` the contents of the file will be included immediately before the closing `</head>` tag. If you create a `site-before-end.html` file the contents of the file will be included immediately before the closing `</body>` tag.
+
+## Page layouts
+
+As well as `page`, `post`, `blog`, there are a few alternative layouts that can be used on pages:
+
+- `categories`: Shows all posts grouped by category, with an index of categories in a left hand sidebar
+- `search`: Adds a search field to the page as well as a simplified version of the sidebar to allow more focus on the search results
+
+## Page and Post options
+
+There are some more specific options you can apply when creating a page or a post:
+
+- `aside: true`: Adds a sidebar to the page or post, this is false by default and will not appear
+- `comments: false`: Turns off comments for that post
+- `feature_image: "/uploads/feature-image.jpg"`: Adds a full width feature image at the top of the page
+- `feature_text: "Example text"`: Adds text to the top of the page as a full width feature with solid colour; supports markdown. This can be used in conjunction with the `feature_image` option to create a feature image with text over it
+- `indexing: false`: Adds a `noindex` meta element to the `<head>` to stop crawler bots from indexing the page, used on the 404 page
+
+> **Note:** The Post List Page options are actually in the collection data within the `_config.yml` file.
+
+## Credits
+
+- Thanks to [Simple Icons](https://simpleicons.org/) for providing the brand icons, by [Dan Leech](https://twitter.com/bathtype)
+- Thanks to [Sassline](https://sassline.com/) for the typographic basis, by [Jake Giltsoff](https://twitter.com/jakegiltsoff)
+- Thanks to [Flexbox mixin](https://github.com/mastastealth/sass-flex-mixin) by [Brian Franco](https://twitter.com/brianfranco)
+- Thanks to [Normalize](https://necolas.github.io/normalize.css/) by [Nicolas Gallagher](https://twitter.com/necolas) and [Jonathan Neal](https://twitter.com/jon_neal).
+- Thanks to [pygments-css](http://richleland.github.io/pygments-css/) for the autumn syntax highlighting, by [Rich Leland](https://twitter.com/richleland)
