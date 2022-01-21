@@ -11,7 +11,7 @@
 
 ### 2. 泛读
   - Abstract+Figures，做成PPT或excel表格归类整理
-  - 利用[CONNECTED PAPERS](https://www.connectedpapers.com/)检索相关文献知识图谱，了解重要的引用（经典文献）和被引（最新进展）
+  - 利用 **[CONNECTED PAPERS](https://www.connectedpapers.com/)** 工具检索感兴趣相关文献的知识图谱，了解重要的引用（经典文献）和被引（最新进展）
 
 
 
