@@ -10,7 +10,8 @@
   - 结合自己的原有知识，思考；它和**自己的课题**有什么关系，是在观点上支持或反对，还是在技术上有可借鉴之处。
 
 ### 2. 泛读
-  Abstract+Figures，归类整理
+  - Abstract+Figures，做成PPT或excel表格归类整理
+  - 利用[CONNECTED PAPERS](https://www.connectedpapers.com/)检索相关文献知识图谱，了解重要的引用（经典文献）和被引（最新进展）
 
 
 
