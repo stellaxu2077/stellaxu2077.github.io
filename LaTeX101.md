@@ -9,6 +9,7 @@
 - **[TeX Live]**(https://www.tug.org/texlive/?continueFlag=b53bb61a9a5c34c1eb486c6ab9bb135a)
 - **[MikTeX]**(https://miktex.org/?continueFlag=b53bb61a9a5c34c1eb486c6ab9bb135a)
   
+  
 ### 编辑器：
 - **[WinEdt]**(https://www.winedt.com/?continueFlag=b53bb61a9a5c34c1eb486c6ab9bb135a)
 - **[TeXstudio]**(https://www.texstudio.org/?continueFlag=b53bb61a9a5c34c1eb486c6ab9bb135a)
@@ -16,9 +17,11 @@
 - 在线编辑器 **[Overleaf]**(https://www.overleaf.com/?continueFlag=b53bb61a9a5c34c1eb486c6ab9bb135a)
 （或可参考：overleaf用edu邮箱注册，免费下载模板后，用开源编辑器texstudio本地编译）
   
+  
 ### 入门教材：
 - **《LaTeX Note》**：一本可以轻松读完的中文教材，文本一直在更新，是很多LaTeX入门者的必读教材
 - **《lshort-zh-cn》**：一本比较全面的入门教材，也是LaTeX Note的很好的补充
+  
   
 ### 视频教程：
 - **[【刘海洋·LaTeX不快速的入门】]**（BV1s7411U7Pr）：《LaTeX 入门》的作者刘海洋在北大的 LaTeX 讲座讲稿，源代码可以看视频简介下载
