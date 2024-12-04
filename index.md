@@ -15,14 +15,17 @@ I am also learning Web Developing now.
 
 
 ## Research Interests
-
+- **Cancer, immune diseases and chronical diseases related to ageing**
 - **Deep Learning:** 
-- **Cancer Multi-omics:** 
+- **Multi-omics:** 
 
-## News
+## My Story
 
+{% include_relative _includes/story.md %}
 
-
+<!--
 {% include_relative _includes/publications.md %}
 
 {% include_relative _includes/services.md %}
+-->
+
